@@ -1,0 +1,40 @@
+li {
+
+color:  #33cc33;
+}
+
+a {
+	color: green;
+	background-color: lightgray;
+}
+
+body {
+	background-image: url("gym.jpg")
+}
+
+.tbox-default {
+	border-radius: 15px;
+	background-color:white;
+	padding: 20px;
+	font-family: Yu Gothic;
+	font-size:15px;
+    text-align: justify;
+	text-indent: 20px;
+	color:green;
+	letter-spacing: 1px;
+}
+
+.cirilica
+{
+	letter-spacing:-5px;
+	word-spacing:8px;
+}
+
+.tez {
+	letter-spacing:1px;
+	font-family:Arial;
+}
+
+div {
+	margin-top:20px;
+}
