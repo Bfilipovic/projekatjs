@@ -16,7 +16,7 @@ body {
 	border-radius: 15px;
 	background-color:white;
 	padding: 20px;
-	font-family: Yu Gothic;
+	font-family: Times New Roman;
 	font-size:15px;
 	text-align: justify;
 	color:green;
@@ -25,8 +25,8 @@ body {
 
 .cirilica
 {
-	letter-spacing:-5px;
-	word-spacing:8px;
+	letter-spacing:-1px;
+	word-spacing:2px;
 }
 
 .tez {
