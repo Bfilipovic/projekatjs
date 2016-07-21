@@ -1,57 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Glavna strana</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Учланите се</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
-integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
-crossorigin="anonymous">
-<!-- moj stil -->
-<link rel="stylesheet" type="text/css" href="stil.css">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+  crossorigin="anonymous">
+  <!-- moj stil -->
+  <link rel="stylesheet" type="text/css" href="stil.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
-
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 
-<meta charset="UTF-8">
-  </head>
-  <body>
-	  <nav class="navbar navbar-default navbar-fixed-top ">
-	  <div class="navbar-header navbar-brand"> Teretana "Kod Baje" </div>
-      <ul class="nav nav-tabs">
-        <li ><a href="main.html">Glavna</a></li>
-        <li class="active"> <a href="uclanite.html">Uclanite se</a>    </li>
-        <li><a href="tezina.html">Idealna tezina</a></li>
+
+
+  <meta charset="UTF-8">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top ">
+    <div class="navbar-header navbar-brand"> Teretana "Kod Baje" </div>
+    <ul class="nav nav-tabs">
+      <li ><a href="main.html">Glavna</a></li>
+      <li class="active"> <a href="uclanite.html">Uclanite se</a>    </li>
+      <li><a href="tezina.html">Idealna tezina</a></li>
     </ul>
-      </nav>
-	  
-	  
-	  
-	  
-	  
+  </nav>
+
+
+
+
+
   <div class="container">
     <div class="row">
-	<div class="col-md-8"> <p class="nesto"> Mom's spaghetti </p></div>
-	<div class="col-md-4"> </div>
-	</div>
+      <div class="col-md-4">
+        <div class="tbox-default cirilica">
+          <h3> Учланите се у нашу теретану </h3>
+          <form>
+            Име :<br>
+            <input type="text" id="firstname">
+            <br>
+            Презиме :<br>
+            <input type="text" id="lastname">
+            Годиште :<br>
+            <input type="number" id="age" value="2016"> <br>
+            Пол : <br>
+            <input type="radio" name="gender" value="male" checked> Мушки<br>
+            <input type="radio" name="gender" value="female"> Женски<br>
+            <br>
+            Ради ваше безбедности у теретани, штиклирајте све болести/стања које поседујете:<br>
+            <input type="checkbox" name="bolesti" >Срчана мана<br>
+            <input type="checkbox" name="bolesti">Сколиоза<br>
+            <input type="checkbox" name="bolesti" >Равни табани<br>
+            <input type="checkbox" name="bolesti" >Скраћени лигаменти<br>
+            <input type="checkbox" name="bolesti" >Ебола <br>
+            <input type="button" onclick="noviclan()" value="Учлани се!">
+          </form>
+        </div>
+      </div>
+      <div class="col-md-8">
+      </div>
+    </div>
   </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    function clan() {
+      var d = new Date();
+      this.ime = document.getElementById("firstname").value;
+      this.prezime = document.getElementById("lastname").value;
+      this.godine = d.getFullYear()-document.getElementById("age");
+      var p=getElementsByName("gender");
+      for(var i=0;i<2;i++)
+      {
+        if(p[i].checked==true){
+          this.pol=p[i].innerHTML;
+        }
+      }
+      var b=getElementsByName("bolesti");
+      this.bolesti=[];
+      for(var j=0;i<5;j++)
+      {
+        if(b[j].checked==true){
+          this.bolesti.push(b[i].innerHTML);
+        }
+      }
+      this.eyeColor = eye;
+      }
+
+  </script>
+</body>
 </html>
