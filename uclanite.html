@@ -52,24 +52,32 @@
             <input type="text" id="firstname">
             <br>
             Презиме :<br>
-            <input type="text" id="lastname">
+            <input type="text" id="lastname"> <br>
             Годиште :<br>
             <input type="number" id="age" value="2016"> <br>
             Пол : <br>
-            <input type="radio" name="gender" value="male" checked> Мушки<br>
-            <input type="radio" name="gender" value="female"> Женски<br>
+            <input type="radio" name="gender" value="мушки" checked> Мушки<br>
+            <input type="radio" name="gender" value="женски"> Женски<br>
             <br>
             Ради ваше безбедности у теретани, штиклирајте све болести/стања које поседујете:<br>
-            <input type="checkbox" name="bolesti" >Срчана мана<br>
-            <input type="checkbox" name="bolesti">Сколиоза<br>
-            <input type="checkbox" name="bolesti" >Равни табани<br>
-            <input type="checkbox" name="bolesti" >Скраћени лигаменти<br>
-            <input type="checkbox" name="bolesti" >Ебола <br>
+            <input type="checkbox" name="bolesti" value="Срчана мана" >Срчана мана
+            </input><br>
+            <input type="checkbox" name="bolesti" value="Сколиоза" >Сколиоза
+            </input><br>
+            <input type="checkbox" name="bolesti" value="Равни табани" >Равни табани
+            </input><br>
+            <input type="checkbox" name="bolesti" value="Скраћени лигаменти" >Скраћени лигаменти
+            </input><br>
+            <input type="checkbox" name="bolesti" value="Ебола" >Ебола
+            </input><br>
             <input type="button" onclick="noviclan()" value="Учлани се!">
           </form>
         </div>
       </div>
       <div class="col-md-8">
+        <div class="tbox-default cirilica">
+          <table id="tabela"></table>
+        </div>
       </div>
     </div>
   </div>
@@ -80,28 +88,55 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
   <script>
+  brojzapisa = 0;
+    function noviclan()
+    {
+      var table = document.getElementById('tabela');
+      if(brojzapisa==0){
+        var imena = [ "Име","Презиме","Године","Пол","Болести"];
+        var row = table.insertRow(0);
+        for(j=0;j<5;j++){
+        var cell = row.insertCell(j);
+        cell.innerHTML=imena[j];
+      }
+      brojzapisa++;
+      }
+      var novi = new clan();
+      var rown = table.insertRow(brojzapisa);
+      var x;
+      var n = 0;
+      for (x in novi) {
+        var celln = rown.insertCell(n);
+        celln.innerHTML=novi[x];
+        n++;
+      }
+    }
+
     function clan() {
       var d = new Date();
       this.ime = document.getElementById("firstname").value;
       this.prezime = document.getElementById("lastname").value;
-      this.godine = d.getFullYear()-document.getElementById("age");
-      var p=getElementsByName("gender");
-      for(var i=0;i<2;i++)
+      this.godine = d.getFullYear()-document.getElementById("age").value;
+
+      var p=document.getElementsByName("gender");
+
+      for( i=0;i<2;i++)
       {
+
         if(p[i].checked==true){
-          this.pol=p[i].innerHTML;
+          this.pol=p[i].value;
         }
+
       }
-      var b=getElementsByName("bolesti");
+      var b = 	document.getElementsByName("bolesti");
       this.bolesti=[];
-      for(var j=0;i<5;j++)
+      for( j=0;j<5;j++)
       {
         if(b[j].checked==true){
-          this.bolesti.push(b[i].innerHTML);
+          this.bolesti.push(b[j].value);
         }
       }
-      this.eyeColor = eye;
-      }
+    }
 
   </script>
 </body>
