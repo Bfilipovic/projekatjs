@@ -45,3 +45,9 @@ td{
 	border: 2px solid black;
 	padding: 3px;
 }
+
+#myCarousel
+{
+	border: solid black 2px;
+	padding: 5px;
+}
